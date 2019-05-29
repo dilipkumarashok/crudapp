@@ -1,14 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: dbsql
+  name: mysql
   labels:
-    app: dbsql
+    service: dbsql
 spec:
-  ports:
-    - port: 3306
   selector:
-    app: dbsql
-    tier: dbsql
-  clusterIP: None
-  
+    service: dbsql
+  type: ClusterIP
+  ports:
+  - port: 3306
