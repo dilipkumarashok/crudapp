@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: dbsql
+  labels:
+    app: dbsql
+spec:
+  ports:
+    - port: 3306
+  selector:
+    app: dbsql
+    tier: dbsql
+  clusterIP: None
+  
